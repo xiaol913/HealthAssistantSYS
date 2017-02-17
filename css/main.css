@@ -1,0 +1,113 @@
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+/*平常设置*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo', sans-serif;
+}
+
+body {
+    font-family: Georgia, Serif;
+    background: #fff;
+    font-weight: 400;
+    font-size: 15px;
+    color: #333; /*设置字体抗锯齿和光滑度*/
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: #555;
+}
+
+li {
+    list-style: none;
+}
+
+input, select, textarea {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.fr {
+    float: right
+}
+
+.fl {
+    float: left
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+/*头部*/
+.head {
+    position: relative;
+    height: 129px;
+    width: 100%;
+    background: #a12638;
+    overflow: hidden;
+    z-index: 999999;
+    font-family: "Josefin Slab", "Myriad Pro", Arial, sans-serif;
+}
+
+.logo {
+    width: 282px;
+    height: 100%;
+    background: url(../img/logo-TROY.png) 10px center no-repeat;
+}
+
+.head_text {
+    height: 100%;
+    font-size: 25px;
+    line-height: 200%;
+    color: #FFF;
+    padding-right: 10px;
+    font-family: "Josefin Slab", "Myriad Pro", Arial, sans-serif;
+}
+
+/*登录信息*/
+.operation_user {
+    height: 27px;
+    font-size: 14px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0%;
+    margin-right: 80px;
+}
+
+.link {
+    line-height: 27px;
+}
+
+.link span {
+    padding: 0 2px;
+}
+
+.link input {
+    padding: 0 2px;
+}
+
+.link a {
+    padding: 0 10px;
+}
+

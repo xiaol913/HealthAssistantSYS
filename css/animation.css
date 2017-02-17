@@ -1,0 +1,351 @@
+/*向上移动*/
+@-webkit-keyframes moveUp {
+    0% {
+        -webkit-transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes moveUp {
+    0% {
+        -o-transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        -o-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes moveUp {
+    0% {
+        -moz-transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        -moz-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes moveUp {
+    0% {
+        -ms-transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        -ms-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/*向下移动*/
+@-webkit-keyframes moveDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes moveDown {
+    0% {
+        -o-transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        -o-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes moveDown {
+    0% {
+        -moz-transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        -moz-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes moveDown {
+    0% {
+        -ms-transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        -ms-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/*向右移动*/
+@-webkit-keyframes moveRight {
+    0% {
+        -webkit-transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes moveRight {
+    0% {
+        -o-transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        -o-transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes moveRight {
+    0% {
+        -moz-transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        -moz-transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes moveRight {
+    0% {
+        -ms-transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        -ms-transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/*缩放*/
+@-webkit-keyframes showScale {
+    0% {
+        -webkit-transform: scale(2, 2);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes showScale {
+    0% {
+        -o-transform: scale(2, 2);
+        opacity: 0;
+    }
+    100% {
+        -o-transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes showScale {
+    0% {
+        -moz-transform: scale(2, 2);
+        opacity: 0;
+    }
+    100% {
+        -moz-transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes showScale {
+    0% {
+        -ms-transform: scale(2, 2);
+        opacity: 0;
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes showScale {
+    0% {
+        transform: scale(2, 2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+/*渐显*/
+@-webkit-keyframes moveShow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes moveShow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes moveShow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes moveShow {
+    0% {
+        -ms-transform: translateZ(-100px);
+        opacity: 0;
+    }
+    100% {
+        -ms-transform: translateZ(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes moveShow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*渐显*/
+@-webkit-keyframes showRotate {
+    0% {
+        -webkit-transform: rotate(360deg);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes showRotate {
+    0% {
+        -o-transform: rotate(360deg);
+        opacity: 0;
+    }
+    100% {
+        -o-transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes showRotate {
+    0% {
+        -moz-transform: rotate(360deg);
+        opacity: 0;
+    }
+    100% {
+        -moz-transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes showRotate {
+    0% {
+        -ms-transform: rotate(360deg);
+        opacity: 0;
+    }
+    100% {
+        -ms-transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes showRotate {
+    0% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+#menu_text h2 {
+    -webkit-animation: moveDown 2s ease-in-out 0.2s backwards;
+    -moz-animation: moveDown 2s ease-in-out 0.2s backwards;
+    -o-animation: moveDown 2s ease-in-out 0.2s backwards;
+    -ms-animation: moveDown 2s ease-in-out 0.2s backwards;
+    animation: moveDown 2s ease-in-out 0.2s backwards;
+}
+
+#menu_button div {
+    -webkit-animation: moveShow 2s ease-in-out 0.2s backwards;
+    -moz-animation: moveShow 2s ease-in-out 0.2s backwards;
+    -o-animation: moveShow 2s ease-in-out 0.2s backwards;
+    -ms-animation: moveShow 2s ease-in-out 0.2s backwards;
+    animation: moveShow 2s ease-in-out 0.2s backwards;
+}
+
+#menu_button a {
+    -webkit-animation: moveUp 2s ease-in-out 0.2s backwards;
+    -moz-animation: moveUp 2s ease-in-out 0.2s backwards;
+    -o-animation: moveUp 2s ease-in-out 0.2s backwards;
+    -ms-animation: moveUp 2s ease-in-out 0.2s backwards;
+    animation: moveUp 2s ease-in-out 0.2s backwards;
+}
