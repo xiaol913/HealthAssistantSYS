@@ -19,5 +19,4 @@ require_once 'image.func.php';
 require_once 'hospital.inc.php';
 require_once 'reservation.inc.php';
 require_once 'case.inc.php';
-require_once 'user.inc.php';
 require_once 'status.inc.php';
