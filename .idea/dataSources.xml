@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3423643107">
-    <data-source source="LOCAL" name="MySQL - @localhost" uuid="33727967-e76b-49a6-a9a6-c5a1d89e0edd">
+  <component name="DataSourceManagerImpl" format="xml" hash="496990898">
+    <data-source source="LOCAL" name="MySQL - healthassistantsys@localhost" uuid="a62e9f48-c28d-4180-bd14-f8dc5273d897">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/healthassistantsys</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

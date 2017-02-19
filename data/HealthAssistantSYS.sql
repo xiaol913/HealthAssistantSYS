@@ -23,14 +23,14 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `user_level`      INT(5)              NOT NULL,
   `user_password`   CHAR(32)            NOT NULL,
   PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_key` (`user_id_card`,`user_phone_num`)
+  UNIQUE KEY `user_key` (`user_id_card`, `user_phone_num`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
 -- 添加1条用户信息用于测试
-REPLACE INTO `user_info` (user_phone_num, user_name, user_id_card, user_age, user_address, user_level, user_password, user_sex)
-VALUES (12345678901, '基仔', 123456789012345678, 2, '美国啦啦啦啦', 0, '4297f44b13955235245b2497399d7a93', '男');
+REPLACE INTO `user_info` (user_phone_num, user_name, user_id_card, user_age, user_address, user_level, user_password, user_sex,user_family_num)
+VALUES (12345678901, '基仔', 123456789012345678, 2, '美国啦啦啦啦', 0, '4297f44b13955235245b2497399d7a93', '男','1');
 
 -- 病历表
 DROP TABLE IF EXISTS `case_info`;
@@ -117,3 +117,26 @@ CREATE TABLE IF NOT EXISTS `status_info` (
 -- 添加6条种类信息用于测试
 REPLACE INTO `status_info` (status_id, status_name)
 VALUES (0, '已预约'), (1, '等待中'), (2, '检查中'), (3, '化验中'), (4, '诊断中'), (5, '已结束');
+
+-- 家庭表
+DROP TABLE IF EXISTS `family_info`;
+CREATE TABLE IF NOT EXISTS `family_info` (
+  `fam_id`   BIGINT(18) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `fam_name` VARCHAR(50)         NOT NULL,
+  `fam_a`    BIGINT(18),
+  `fam_b`    BIGINT(18),
+  `fam_c`    BIGINT(18),
+  `fam_d`    BIGINT(18),
+  `fam_e`    BIGINT(18),
+  `fam_f`    BIGINT(18),
+  `fam_g`    BIGINT(18),
+  `fam_h`    BIGINT(18),
+  `fam_i`    BIGINT(18),
+  `fam_j`    BIGINT(18),
+  PRIMARY KEY (`fam_id`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
+
+-- 添加1条用于测试
+REPLACE INTO `family_info` (fam_name,fam_a) VALUES ('基仔的家',1);

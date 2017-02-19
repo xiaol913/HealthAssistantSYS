@@ -8,7 +8,6 @@
 require_once '../include.php';
 
 $act = $_REQUEST['act'];
-$old = file_get_contents("php://input");
 $json = json_decode(file_get_contents("php://input"), true);
 
 if ($act == "userReg") {
@@ -23,4 +22,6 @@ if ($act == "userReg") {
     }else{
         print_r(json_encode($mes));
     }
+}elseif ($act == "getFamily"){
+    $mes = getUserFamily($json);
 }

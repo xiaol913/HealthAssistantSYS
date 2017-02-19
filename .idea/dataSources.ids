@@ -1,350 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - @localhost" uuid="33727967-e76b-49a6-a9a6-c5a1d89e0edd">
+  <data-source name="MySQL - healthassistantsys@localhost" uuid="a62e9f48-c28d-4180-bd14-f8dc5273d897">
     <database-info product="MySQL" version="5.7.9" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
-      <schema id="1" name="troycoursesys"/>
-      <table id="2" parent="1" name="troy_admins"/>
-      <table id="3" parent="1" name="troy_album"/>
-      <table id="4" parent="1" name="troy_courses"/>
-      <table id="5" parent="1" name="troy_level"/>
-      <table id="6" parent="1" name="troy_professors"/>
-      <table id="7" parent="1" name="troy_register"/>
-      <table id="8" parent="1" name="troy_schedule"/>
-      <table id="9" parent="1" name="troy_students"/>
-      <table id="10" parent="1" name="troy_subjects"/>
-      <table id="11" parent="1" name="troy_term"/>
-      <column id="12" parent="2" name="id">
+      <schema id="1" name="healthassistantsys"/>
+      <table id="2" parent="1" name="case_info"/>
+      <table id="3" parent="1" name="hospital_info"/>
+      <table id="4" parent="1" name="reservation_info"/>
+      <table id="5" parent="1" name="status_info"/>
+      <table id="6" parent="1" name="type_info"/>
+      <table id="7" parent="1" name="user_info"/>
+      <table id="8" parent="1" name="family_info"/>
+      <column id="9" parent="2" name="case_id">
         <mandatory>1</mandatory>
-        <data-type>tinyint(3) unsigned</data-type>
+        <data-type>bigint(18) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="13" parent="2" name="username">
+      <column id="10" parent="2" name="case_user_id">
         <mandatory>1</mandatory>
-        <data-type>varchar(20)</data-type>
+        <data-type>bigint(18) unsigned</data-type>
       </column>
-      <column id="14" parent="2" name="password">
+      <column id="11" parent="2" name="case_hos_id">
         <mandatory>1</mandatory>
-        <data-type>char(32)</data-type>
+        <data-type>bigint(18) unsigned</data-type>
       </column>
-      <column id="15" parent="2" name="email">
+      <column id="12" parent="2" name="case_date">
         <mandatory>1</mandatory>
-        <data-type>varchar(50)</data-type>
+        <data-type>timestamp</data-type>
       </column>
-      <column id="16" parent="2" name="level">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <index id="17" parent="2" name="username">
-        <columns>username</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <key id="18" parent="2" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <key id="19" parent="2" name="username">
-        <columns>username</columns>
-        <underlying-index>username</underlying-index>
-      </key>
-      <column id="20" parent="3" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
-      </column>
-      <column id="21" parent="3" name="pId">
-        <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
-      </column>
-      <column id="22" parent="3" name="albumPath">
-        <mandatory>1</mandatory>
-        <data-type>varchar(50)</data-type>
-      </column>
-      <key id="23" parent="3" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="24" parent="4" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
-      </column>
-      <column id="25" parent="4" name="courseName">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="26" parent="4" name="courseId">
-        <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
-      </column>
-      <column id="27" parent="4" name="subjectId">
-        <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
-      </column>
-      <column id="28" parent="4" name="courseStartTime">
-        <mandatory>1</mandatory>
-        <data-type>int(50)</data-type>
-      </column>
-      <column id="29" parent="4" name="courseEndTime">
-        <mandatory>1</mandatory>
-        <data-type>int(50)</data-type>
-      </column>
-      <column id="30" parent="4" name="courseAvai">
-        <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
-      </column>
-      <column id="31" parent="4" name="courseCapa">
-        <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
-      </column>
-      <column id="32" parent="4" name="courseTerm">
-        <mandatory>1</mandatory>
-        <data-type>int(10)</data-type>
-      </column>
-      <column id="33" parent="4" name="courseStat">
-        <mandatory>1</mandatory>
-        <data-type>int(10)</data-type>
-      </column>
-      <column id="34" parent="4" name="courseLoca">
-        <mandatory>1</mandatory>
-        <data-type>varchar(45)</data-type>
-      </column>
-      <column id="35" parent="4" name="courseDesc">
+      <column id="13" parent="2" name="case_desc">
         <mandatory>1</mandatory>
         <data-type>text</data-type>
       </column>
-      <column id="36" parent="4" name="courseCred">
+      <column id="14" parent="2" name="case_type_id">
         <mandatory>1</mandatory>
-        <data-type>decimal(10,2)</data-type>
+        <data-type>tinyint(10) unsigned</data-type>
       </column>
-      <column id="37" parent="4" name="courseLevel">
+      <key id="15" parent="2" name="PRIMARY">
+        <columns>case_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="16" parent="3" name="hos_id">
         <mandatory>1</mandatory>
-        <data-type>int(10)</data-type>
+        <data-type>bigint(18) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
-      <column id="38" parent="4" name="courseProfId">
+      <column id="17" parent="3" name="hos_name">
         <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
+        <data-type>varchar(25)</data-type>
       </column>
-      <index id="39" parent="4" name="courseId">
-        <columns>courseId</columns>
+      <column id="18" parent="3" name="hos_part">
+        <mandatory>1</mandatory>
+        <data-type>varchar(25)</data-type>
+      </column>
+      <column id="19" parent="3" name="hos_username">
+        <mandatory>1</mandatory>
+        <data-type>varchar(25)</data-type>
+      </column>
+      <column id="20" parent="3" name="hos_password">
+        <mandatory>1</mandatory>
+        <data-type>char(32)</data-type>
+      </column>
+      <index id="21" parent="3" name="hos_key">
+        <columns>hos_username</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <index id="40" parent="4" name="courseName">
-        <columns>courseName</columns>
+      <key id="22" parent="3" name="hos_key">
+        <columns>hos_username</columns>
+        <underlying-index>hos_key</underlying-index>
+      </key>
+      <key id="23" parent="3" name="PRIMARY">
+        <columns>hos_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="24" parent="4" name="res_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="25" parent="4" name="res_user_id_card">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18) unsigned</data-type>
+      </column>
+      <column id="26" parent="4" name="res_hos_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18) unsigned</data-type>
+      </column>
+      <column id="27" parent="4" name="res_start">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="28" parent="4" name="res_end">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="29" parent="4" name="res_type">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(10) unsigned</data-type>
+      </column>
+      <column id="30" parent="4" name="res_status">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(10) unsigned</data-type>
+      </column>
+      <key id="31" parent="4" name="PRIMARY">
+        <columns>res_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="32" parent="5" name="status_id">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(10) unsigned</data-type>
+      </column>
+      <column id="33" parent="5" name="status_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <index id="34" parent="5" name="status_key">
+        <columns>status_name</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="41" parent="4" name="courseId">
-        <columns>courseId</columns>
-        <underlying-index>courseId</underlying-index>
-      </key>
-      <key id="42" parent="4" name="courseName">
-        <columns>courseName</columns>
-        <underlying-index>courseName</underlying-index>
-      </key>
-      <key id="43" parent="4" name="PRIMARY">
-        <columns>id</columns>
+      <key id="35" parent="5" name="PRIMARY">
+        <columns>status_id</columns>
         <primary>1</primary>
       </key>
-      <column id="44" parent="5" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
-      </column>
-      <column id="45" parent="5" name="levelName">
-        <mandatory>1</mandatory>
-        <data-type>varchar(100)</data-type>
-      </column>
-      <key id="46" parent="5" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
+      <key id="36" parent="5" name="status_key">
+        <columns>status_name</columns>
+        <underlying-index>status_key</underlying-index>
       </key>
-      <column id="47" parent="6" name="id">
+      <column id="37" parent="6" name="type_id">
         <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
+        <data-type>tinyint(10) unsigned</data-type>
       </column>
-      <column id="48" parent="6" name="profFirstName">
+      <column id="38" parent="6" name="type_name">
         <mandatory>1</mandatory>
-        <data-type>varchar(55)</data-type>
+        <data-type>varchar(50)</data-type>
       </column>
-      <column id="49" parent="6" name="profLastName">
-        <mandatory>1</mandatory>
-        <data-type>varchar(55)</data-type>
-      </column>
-      <column id="50" parent="6" name="profEmail">
-        <mandatory>1</mandatory>
-        <data-type>varchar(55)</data-type>
-      </column>
-      <column id="51" parent="6" name="profPhoneNum">
-        <mandatory>1</mandatory>
-        <data-type>varchar(55)</data-type>
-      </column>
-      <column id="52" parent="6" name="profDesc">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="53" parent="6" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="54" parent="7" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
-      </column>
-      <column id="55" parent="7" name="sId">
-        <mandatory>1</mandatory>
-        <data-type>int(50)</data-type>
-      </column>
-      <column id="56" parent="7" name="cId">
-        <mandatory>1</mandatory>
-        <data-type>int(50)</data-type>
-      </column>
-      <key id="57" parent="7" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="58" parent="8" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
-      </column>
-      <column id="59" parent="8" name="mon">
-        <data-type>varchar(55)</data-type>
-      </column>
-      <column id="60" parent="8" name="tue">
-        <data-type>varchar(55)</data-type>
-      </column>
-      <column id="61" parent="8" name="wed">
-        <data-type>varchar(55)</data-type>
-      </column>
-      <column id="62" parent="8" name="thu">
-        <data-type>varchar(55)</data-type>
-      </column>
-      <column id="63" parent="8" name="fri">
-        <data-type>varchar(55)</data-type>
-      </column>
-      <column id="64" parent="8" name="sat">
-        <data-type>varchar(55)</data-type>
-      </column>
-      <column id="65" parent="8" name="sun">
-        <data-type>varchar(55)</data-type>
-      </column>
-      <key id="66" parent="8" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="67" parent="9" name="sId">
-        <mandatory>1</mandatory>
-        <data-type>int(11) unsigned</data-type>
-        <sequence-identity>1</sequence-identity>
-      </column>
-      <column id="68" parent="9" name="username">
-        <mandatory>1</mandatory>
-        <data-type>varchar(45)</data-type>
-      </column>
-      <column id="69" parent="9" name="password">
-        <mandatory>1</mandatory>
-        <data-type>char(45)</data-type>
-      </column>
-      <column id="70" parent="9" name="sFirstName">
-        <mandatory>1</mandatory>
-        <data-type>varchar(45)</data-type>
-      </column>
-      <column id="71" parent="9" name="sLastName">
-        <mandatory>1</mandatory>
-        <data-type>varchar(45)</data-type>
-      </column>
-      <column id="72" parent="9" name="sBTD">
-        <mandatory>1</mandatory>
-        <data-type>varchar(45)</data-type>
-      </column>
-      <column id="73" parent="9" name="sAddress">
-        <mandatory>1</mandatory>
-        <data-type>varchar(45)</data-type>
-      </column>
-      <column id="74" parent="9" name="sEmail">
-        <mandatory>1</mandatory>
-        <data-type>varchar(45)</data-type>
-      </column>
-      <column id="75" parent="9" name="phoneNum">
-        <mandatory>1</mandatory>
-        <data-type>int(15)</data-type>
-      </column>
-      <column id="76" parent="9" name="sMajorId">
-        <mandatory>1</mandatory>
-        <data-type>varchar(45)</data-type>
-      </column>
-      <column id="77" parent="9" name="level">
-        <mandatory>1</mandatory>
-        <data-type>varchar(45)</data-type>
-      </column>
-      <index id="78" parent="9" name="username">
-        <columns>username</columns>
+      <index id="39" parent="6" name="type_key">
+        <columns>type_name</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="79" parent="9" name="PRIMARY">
-        <columns>sId</columns>
+      <key id="40" parent="6" name="PRIMARY">
+        <columns>type_id</columns>
         <primary>1</primary>
       </key>
-      <key id="80" parent="9" name="username">
-        <columns>username</columns>
-        <underlying-index>username</underlying-index>
+      <key id="41" parent="6" name="type_key">
+        <columns>type_name</columns>
+        <underlying-index>type_key</underlying-index>
       </key>
-      <column id="81" parent="10" name="id">
+      <column id="42" parent="7" name="user_id">
         <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
+        <data-type>bigint(11) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="82" parent="10" name="subShortName">
+      <column id="43" parent="7" name="user_phone_num">
         <mandatory>1</mandatory>
-        <data-type>varchar(15)</data-type>
+        <data-type>bigint(11) unsigned</data-type>
       </column>
-      <column id="83" parent="10" name="subName">
+      <column id="44" parent="7" name="user_name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <index id="84" parent="10" name="subName">
-        <columns>subName</columns>
+      <column id="45" parent="7" name="user_id_card">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18) unsigned</data-type>
+      </column>
+      <column id="46" parent="7" name="user_sex">
+        <mandatory>1</mandatory>
+        <data-type>char(5)</data-type>
+      </column>
+      <column id="47" parent="7" name="user_age">
+        <mandatory>1</mandatory>
+        <data-type>int(5) unsigned</data-type>
+      </column>
+      <column id="48" parent="7" name="user_address">
+        <mandatory>1</mandatory>
+        <data-type>varchar(80)</data-type>
+      </column>
+      <column id="49" parent="7" name="user_family_num">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="50" parent="7" name="user_level">
+        <mandatory>1</mandatory>
+        <data-type>int(5)</data-type>
+      </column>
+      <column id="51" parent="7" name="user_password">
+        <mandatory>1</mandatory>
+        <data-type>char(32)</data-type>
+      </column>
+      <index id="52" parent="7" name="user_key">
+        <columns>user_id_card
+user_phone_num</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <index id="85" parent="10" name="subShortName">
-        <columns>subShortName</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <key id="86" parent="10" name="PRIMARY">
-        <columns>id</columns>
+      <key id="53" parent="7" name="PRIMARY">
+        <columns>user_id</columns>
         <primary>1</primary>
       </key>
-      <key id="87" parent="10" name="subName">
-        <columns>subName</columns>
-        <underlying-index>subName</underlying-index>
+      <key id="54" parent="7" name="user_key">
+        <columns>user_id_card
+user_phone_num</columns>
+        <underlying-index>user_key</underlying-index>
       </key>
-      <key id="88" parent="10" name="subShortName">
-        <columns>subShortName</columns>
-        <underlying-index>subShortName</underlying-index>
-      </key>
-      <column id="89" parent="11" name="id">
+      <column id="55" parent="8" name="fam_id">
         <mandatory>1</mandatory>
-        <data-type>int(10) unsigned</data-type>
+        <data-type>bigint(18) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="90" parent="11" name="termName">
+      <column id="56" parent="8" name="fam_name">
         <mandatory>1</mandatory>
-        <data-type>varchar(100)</data-type>
+        <data-type>varchar(50)</data-type>
       </column>
-      <key id="91" parent="11" name="PRIMARY">
-        <columns>id</columns>
+      <column id="57" parent="8" name="fam_a">
+        <data-type>bigint(18)</data-type>
+      </column>
+      <column id="58" parent="8" name="fam_b">
+        <data-type>bigint(18)</data-type>
+      </column>
+      <column id="59" parent="8" name="fam_c">
+        <data-type>bigint(18)</data-type>
+      </column>
+      <column id="60" parent="8" name="fam_d">
+        <data-type>bigint(18)</data-type>
+      </column>
+      <column id="61" parent="8" name="fam_e">
+        <data-type>bigint(18)</data-type>
+      </column>
+      <column id="62" parent="8" name="fam_f">
+        <data-type>bigint(18)</data-type>
+      </column>
+      <column id="63" parent="8" name="fam_g">
+        <data-type>bigint(18)</data-type>
+      </column>
+      <column id="64" parent="8" name="fam_h">
+        <data-type>bigint(18)</data-type>
+      </column>
+      <column id="65" parent="8" name="fam_i">
+        <data-type>bigint(18)</data-type>
+      </column>
+      <column id="66" parent="8" name="fam_j">
+        <data-type>bigint(18)</data-type>
+      </column>
+      <key id="67" parent="8" name="PRIMARY">
+        <columns>fam_id</columns>
         <primary>1</primary>
       </key>
     </database-model>

@@ -49,3 +49,13 @@ function userLogin($json){
         return "not exist";
     }
 }
+
+
+function getUserFamily($json){
+    $search = "user.user_id, user.user_name, user.user_id_card, user.user_age, user.user_sex, user.user_address, fam.*";
+    $table = "user_info AS user LEFT JOIN family_info AS fam ON user.user_family_num = fam.fam_id";
+    $where = "fam.fam_id = ".$json['user_family_num'];
+    $sql = "SELECT {$search} FROM {$table} WHERE {$where}";
+    $result = fetchAll($sql);
+    return $result;
+}
