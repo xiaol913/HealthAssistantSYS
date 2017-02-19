@@ -19,18 +19,18 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `user_sex`        CHAR(5)             NOT NULL,
   `user_age`        INT(5) UNSIGNED     NOT NULL,
   `user_address`    VARCHAR(80)         NOT NULL,
-  `user_family_num` VARCHAR(10)         NOT NULL,
+  `user_family_num` VARCHAR(20),
   `user_level`      INT(5)              NOT NULL,
   `user_password`   CHAR(32)            NOT NULL,
   PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_id_card` (`user_id_card`)
+  UNIQUE KEY `user_key` (`user_id_card`,`user_phone_num`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
 -- 添加1条用户信息用于测试
-REPLACE INTO `user_info` (user_phone_num, user_name, user_id_card, user_age, user_address, user_family_num, user_level, user_password, user_sex)
-VALUES (12345678901, '基仔', 123456789012345678, 2, '美国啦啦啦啦', '666', 0, '4297f44b13955235245b2497399d7a93', '男');
+REPLACE INTO `user_info` (user_phone_num, user_name, user_id_card, user_age, user_address, user_level, user_password, user_sex)
+VALUES (12345678901, '基仔', 123456789012345678, 2, '美国啦啦啦啦', 0, '4297f44b13955235245b2497399d7a93', '男');
 
 -- 病历表
 DROP TABLE IF EXISTS `case_info`;
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `hospital_info` (
   `hos_username` VARCHAR(25)         NOT NULL,
   `hos_password` CHAR(32)            NOT NULL,
   PRIMARY KEY (`hos_id`),
-  UNIQUE KEY `hos_username` (`hos_username`)
+  UNIQUE KEY `hos_key` (`hos_username`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `type_info` (
   `type_id`   TINYINT(10) UNSIGNED NOT NULL,
   `type_name` VARCHAR(50)          NOT NULL,
   PRIMARY KEY (`type_id`),
-  UNIQUE KEY `type_name` (`type_name`)
+  UNIQUE KEY `type_key` (`type_name`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `status_info` (
   `status_id`   TINYINT(10) UNSIGNED NOT NULL,
   `status_name` VARCHAR(50)          NOT NULL,
   PRIMARY KEY (`status_id`),
-  UNIQUE KEY `status_name`(`status_name`)
+  UNIQUE KEY `status_key`(`status_name`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;

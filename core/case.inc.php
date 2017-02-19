@@ -18,7 +18,10 @@ function getPatientAllCasesByUserId($id)
     return $result;
 }
 
-
+/**
+ *  创建病例
+ * @param $id
+ */
 function createCase($id)
 {
     $resultList = getOneReservationByResId($id);
