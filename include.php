@@ -21,3 +21,5 @@ require_once 'reservation.inc.php';
 require_once 'case.inc.php';
 require_once 'status.inc.php';
 require_once 'user.inc.php';
+require_once 'family.inc.php';
+require_once 'ask.inc.php';

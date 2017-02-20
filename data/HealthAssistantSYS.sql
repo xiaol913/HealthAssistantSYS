@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `user_id`         BIGINT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_phone_num`  BIGINT(11) UNSIGNED NOT NULL,
   `user_name`       VARCHAR(45)         NOT NULL,
-  `user_id_card`    BIGINT(18) UNSIGNED NOT NULL,
+  `user_id_card`    VARCHAR(40)         NOT NULL,
   `user_sex`        CHAR(5)             NOT NULL,
   `user_age`        INT(5) UNSIGNED     NOT NULL,
   `user_address`    VARCHAR(80)         NOT NULL,
@@ -23,14 +23,16 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `user_level`      INT(5)              NOT NULL,
   `user_password`   CHAR(32)            NOT NULL,
   PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_key` (`user_id_card`, `user_phone_num`)
+  UNIQUE KEY `user_id_card` (`user_id_card`),
+  UNIQUE KEY `user_phone_num` (`user_phone_num`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
--- 添加1条用户信息用于测试
-REPLACE INTO `user_info` (user_phone_num, user_name, user_id_card, user_age, user_address, user_level, user_password, user_sex,user_family_num)
-VALUES (12345678901, '基仔', 123456789012345678, 2, '美国啦啦啦啦', 0, '4297f44b13955235245b2497399d7a93', '男','1');
+-- 添加2条用户信息用于测试
+REPLACE INTO `user_info` (user_phone_num, user_name, user_id_card, user_age, user_address, user_level, user_password, user_sex)
+VALUES (12345678901, '基仔', 123456789012345678, 2, '美国啦啦啦啦', 0, '4297f44b13955235245b2497399d7a93', '男'),
+  (12345678902, '基仔他妈', 123456789012345679, 2, '美国啦啦啦啦', 0, '4297f44b13955235245b2497399d7a93', '女');
 
 -- 病历表
 DROP TABLE IF EXISTS `case_info`;
@@ -60,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `hospital_info` (
   `hos_username` VARCHAR(25)         NOT NULL,
   `hos_password` CHAR(32)            NOT NULL,
   PRIMARY KEY (`hos_id`),
-  UNIQUE KEY `hos_key` (`hos_username`)
+  UNIQUE KEY `hos_username` (`hos_username`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
@@ -72,22 +74,22 @@ REPLACE INTO `hospital_info` (`hos_name`, `hos_part`, `hos_username`, `hos_passw
 -- 预约表
 DROP TABLE IF EXISTS `reservation_info`;
 CREATE TABLE IF NOT EXISTS `reservation_info` (
-  `res_id`           BIGINT(18) UNSIGNED  NOT NULL AUTO_INCREMENT,
-  `res_user_id_card` BIGINT(18) UNSIGNED  NOT NULL,
-  `res_hos_id`       BIGINT(18) UNSIGNED  NOT NULL,
-  `res_start`        TIMESTAMP            NOT NULL,
-  `res_end`          TIMESTAMP            NOT NULL,
-  `res_type`         TINYINT(10) UNSIGNED NOT NULL,
-  `res_status`       TINYINT(10) UNSIGNED NOT NULL,
+  `res_id`      BIGINT(18) UNSIGNED  NOT NULL AUTO_INCREMENT,
+  `res_user_id` BIGINT(11) UNSIGNED  NOT NULL,
+  `res_hos_id`  BIGINT(18) UNSIGNED  NOT NULL,
+  `res_start`   TIMESTAMP            NOT NULL,
+  `res_end`     DATETIME             NOT NULL,
+  `res_type`    TINYINT(10) UNSIGNED NOT NULL,
+  `res_status`  TINYINT(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`res_id`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
 -- 添加2条预约信息用于WEB端口测试
-REPLACE INTO `reservation_info` (res_user_id_card, res_hos_id, res_start, res_end, res_type, res_status)
-VALUES (123456789012345678, 1, NOW(), '2018-11-14 09:37:23', 1, 5),
-  (123456789012345678, 1, NOW(), '2018-11-14 09:37:23', 2, 5);
+REPLACE INTO `reservation_info` (res_user_id, res_hos_id, res_start, res_end, res_type, res_status)
+VALUES (1, 1, NOW(), '2018-11-14', 1, 5),
+  (1, 1, NOW(), '2018-11-14', 2, 5);
 
 -- 种类表
 DROP TABLE IF EXISTS `type_info`;
@@ -95,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `type_info` (
   `type_id`   TINYINT(10) UNSIGNED NOT NULL,
   `type_name` VARCHAR(50)          NOT NULL,
   PRIMARY KEY (`type_id`),
-  UNIQUE KEY `type_key` (`type_name`)
+  UNIQUE KEY `type_name` (`type_name`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
@@ -109,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `status_info` (
   `status_id`   TINYINT(10) UNSIGNED NOT NULL,
   `status_name` VARCHAR(50)          NOT NULL,
   PRIMARY KEY (`status_id`),
-  UNIQUE KEY `status_key`(`status_name`)
+  UNIQUE KEY `status_name`(`status_name`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
@@ -123,20 +125,27 @@ DROP TABLE IF EXISTS `family_info`;
 CREATE TABLE IF NOT EXISTS `family_info` (
   `fam_id`   BIGINT(18) UNSIGNED NOT NULL AUTO_INCREMENT,
   `fam_name` VARCHAR(50)         NOT NULL,
-  `fam_a`    BIGINT(18),
-  `fam_b`    BIGINT(18),
-  `fam_c`    BIGINT(18),
-  `fam_d`    BIGINT(18),
-  `fam_e`    BIGINT(18),
-  `fam_f`    BIGINT(18),
-  `fam_g`    BIGINT(18),
-  `fam_h`    BIGINT(18),
-  `fam_i`    BIGINT(18),
-  `fam_j`    BIGINT(18),
-  PRIMARY KEY (`fam_id`)
+  PRIMARY KEY (`fam_id`),
+  UNIQUE KEY `fam_name` (`fam_name`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
--- 添加1条用于测试
-REPLACE INTO `family_info` (fam_name,fam_a) VALUES ('基仔的家',1);
+-- 添加2条用于测试
+# REPLACE INTO `family_info` (fam_name, fam_a,fam_b) VALUES ('基仔的家', 1,2);
+
+-- 问题表
+DROP TABLE IF EXISTS `ask_info`;
+CREATE TABLE IF NOT EXISTS `ask_info` (
+  `ask_id`      BIGINT(18) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `ask_user_id` BIGINT(18) UNSIGNED NOT NULL,
+  `ask_name`    VARCHAR(40)         NOT NULL,
+  `ask_age`     INT(10) UNSIGNED    NOT NULL,
+  `ask_sex`     CHAR(10)            NOT NULL,
+  `ask_desc`    VARCHAR(99)         NOT NULL,
+  `ask_time`    TIMESTAMP           NOT NULL,
+  `ask_title`   VARCHAR(40)         NOT NULL,
+  PRIMARY KEY (`ask_id`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;

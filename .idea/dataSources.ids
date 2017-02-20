@@ -15,240 +15,264 @@
       <table id="6" parent="1" name="type_info"/>
       <table id="7" parent="1" name="user_info"/>
       <table id="8" parent="1" name="family_info"/>
-      <column id="9" parent="2" name="case_id">
+      <table id="9" parent="1" name="ask_info"/>
+      <column id="10" parent="2" name="case_id">
         <mandatory>1</mandatory>
         <data-type>bigint(18) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="10" parent="2" name="case_user_id">
+      <column id="11" parent="2" name="case_user_id">
         <mandatory>1</mandatory>
         <data-type>bigint(18) unsigned</data-type>
       </column>
-      <column id="11" parent="2" name="case_hos_id">
+      <column id="12" parent="2" name="case_hos_id">
         <mandatory>1</mandatory>
         <data-type>bigint(18) unsigned</data-type>
       </column>
-      <column id="12" parent="2" name="case_date">
+      <column id="13" parent="2" name="case_date">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
       </column>
-      <column id="13" parent="2" name="case_desc">
+      <column id="14" parent="2" name="case_desc">
         <mandatory>1</mandatory>
         <data-type>text</data-type>
       </column>
-      <column id="14" parent="2" name="case_type_id">
+      <column id="15" parent="2" name="case_type_id">
         <mandatory>1</mandatory>
         <data-type>tinyint(10) unsigned</data-type>
       </column>
-      <key id="15" parent="2" name="PRIMARY">
+      <key id="16" parent="2" name="PRIMARY">
         <columns>case_id</columns>
         <primary>1</primary>
       </key>
-      <column id="16" parent="3" name="hos_id">
+      <column id="17" parent="3" name="hos_id">
         <mandatory>1</mandatory>
         <data-type>bigint(18) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="17" parent="3" name="hos_name">
+      <column id="18" parent="3" name="hos_name">
         <mandatory>1</mandatory>
         <data-type>varchar(25)</data-type>
       </column>
-      <column id="18" parent="3" name="hos_part">
+      <column id="19" parent="3" name="hos_part">
         <mandatory>1</mandatory>
         <data-type>varchar(25)</data-type>
       </column>
-      <column id="19" parent="3" name="hos_username">
+      <column id="20" parent="3" name="hos_username">
         <mandatory>1</mandatory>
         <data-type>varchar(25)</data-type>
       </column>
-      <column id="20" parent="3" name="hos_password">
+      <column id="21" parent="3" name="hos_password">
         <mandatory>1</mandatory>
         <data-type>char(32)</data-type>
       </column>
-      <index id="21" parent="3" name="hos_key">
+      <index id="22" parent="3" name="hos_username">
         <columns>hos_username</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="22" parent="3" name="hos_key">
+      <key id="23" parent="3" name="hos_username">
         <columns>hos_username</columns>
-        <underlying-index>hos_key</underlying-index>
+        <underlying-index>hos_username</underlying-index>
       </key>
-      <key id="23" parent="3" name="PRIMARY">
+      <key id="24" parent="3" name="PRIMARY">
         <columns>hos_id</columns>
         <primary>1</primary>
       </key>
-      <column id="24" parent="4" name="res_id">
+      <column id="25" parent="4" name="res_id">
         <mandatory>1</mandatory>
         <data-type>bigint(18) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="25" parent="4" name="res_user_id_card">
+      <column id="26" parent="4" name="res_user_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11) unsigned</data-type>
+      </column>
+      <column id="27" parent="4" name="res_hos_id">
         <mandatory>1</mandatory>
         <data-type>bigint(18) unsigned</data-type>
       </column>
-      <column id="26" parent="4" name="res_hos_id">
-        <mandatory>1</mandatory>
-        <data-type>bigint(18) unsigned</data-type>
-      </column>
-      <column id="27" parent="4" name="res_start">
+      <column id="28" parent="4" name="res_start">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
       </column>
-      <column id="28" parent="4" name="res_end">
+      <column id="29" parent="4" name="res_end">
         <mandatory>1</mandatory>
-        <data-type>timestamp</data-type>
+        <data-type>datetime</data-type>
       </column>
-      <column id="29" parent="4" name="res_type">
-        <mandatory>1</mandatory>
-        <data-type>tinyint(10) unsigned</data-type>
-      </column>
-      <column id="30" parent="4" name="res_status">
+      <column id="30" parent="4" name="res_type">
         <mandatory>1</mandatory>
         <data-type>tinyint(10) unsigned</data-type>
       </column>
-      <key id="31" parent="4" name="PRIMARY">
+      <column id="31" parent="4" name="res_status">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(10) unsigned</data-type>
+      </column>
+      <key id="32" parent="4" name="PRIMARY">
         <columns>res_id</columns>
         <primary>1</primary>
       </key>
-      <column id="32" parent="5" name="status_id">
+      <column id="33" parent="5" name="status_id">
         <mandatory>1</mandatory>
         <data-type>tinyint(10) unsigned</data-type>
       </column>
-      <column id="33" parent="5" name="status_name">
+      <column id="34" parent="5" name="status_name">
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
-      <index id="34" parent="5" name="status_key">
+      <index id="35" parent="5" name="status_name">
         <columns>status_name</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="35" parent="5" name="PRIMARY">
+      <key id="36" parent="5" name="PRIMARY">
         <columns>status_id</columns>
         <primary>1</primary>
       </key>
-      <key id="36" parent="5" name="status_key">
+      <key id="37" parent="5" name="status_name">
         <columns>status_name</columns>
-        <underlying-index>status_key</underlying-index>
+        <underlying-index>status_name</underlying-index>
       </key>
-      <column id="37" parent="6" name="type_id">
+      <column id="38" parent="6" name="type_id">
         <mandatory>1</mandatory>
         <data-type>tinyint(10) unsigned</data-type>
       </column>
-      <column id="38" parent="6" name="type_name">
+      <column id="39" parent="6" name="type_name">
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
-      <index id="39" parent="6" name="type_key">
+      <index id="40" parent="6" name="type_name">
         <columns>type_name</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="40" parent="6" name="PRIMARY">
+      <key id="41" parent="6" name="PRIMARY">
         <columns>type_id</columns>
         <primary>1</primary>
       </key>
-      <key id="41" parent="6" name="type_key">
+      <key id="42" parent="6" name="type_name">
         <columns>type_name</columns>
-        <underlying-index>type_key</underlying-index>
+        <underlying-index>type_name</underlying-index>
       </key>
-      <column id="42" parent="7" name="user_id">
+      <column id="43" parent="7" name="user_id">
         <mandatory>1</mandatory>
         <data-type>bigint(11) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="43" parent="7" name="user_phone_num">
+      <column id="44" parent="7" name="user_phone_num">
         <mandatory>1</mandatory>
         <data-type>bigint(11) unsigned</data-type>
       </column>
-      <column id="44" parent="7" name="user_name">
+      <column id="45" parent="7" name="user_name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="45" parent="7" name="user_id_card">
+      <column id="46" parent="7" name="user_id_card">
         <mandatory>1</mandatory>
-        <data-type>bigint(18) unsigned</data-type>
+        <data-type>varchar(40)</data-type>
       </column>
-      <column id="46" parent="7" name="user_sex">
+      <column id="47" parent="7" name="user_sex">
         <mandatory>1</mandatory>
         <data-type>char(5)</data-type>
       </column>
-      <column id="47" parent="7" name="user_age">
+      <column id="48" parent="7" name="user_age">
         <mandatory>1</mandatory>
         <data-type>int(5) unsigned</data-type>
       </column>
-      <column id="48" parent="7" name="user_address">
+      <column id="49" parent="7" name="user_address">
         <mandatory>1</mandatory>
         <data-type>varchar(80)</data-type>
       </column>
-      <column id="49" parent="7" name="user_family_num">
+      <column id="50" parent="7" name="user_family_num">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="50" parent="7" name="user_level">
+      <column id="51" parent="7" name="user_level">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="51" parent="7" name="user_password">
+      <column id="52" parent="7" name="user_password">
         <mandatory>1</mandatory>
         <data-type>char(32)</data-type>
       </column>
-      <index id="52" parent="7" name="user_key">
-        <columns>user_id_card
-user_phone_num</columns>
+      <index id="53" parent="7" name="user_id_card">
+        <columns>user_id_card</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="53" parent="7" name="PRIMARY">
+      <index id="54" parent="7" name="user_phone_num">
+        <columns>user_phone_num</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="55" parent="7" name="PRIMARY">
         <columns>user_id</columns>
         <primary>1</primary>
       </key>
-      <key id="54" parent="7" name="user_key">
-        <columns>user_id_card
-user_phone_num</columns>
-        <underlying-index>user_key</underlying-index>
+      <key id="56" parent="7" name="user_id_card">
+        <columns>user_id_card</columns>
+        <underlying-index>user_id_card</underlying-index>
       </key>
-      <column id="55" parent="8" name="fam_id">
+      <key id="57" parent="7" name="user_phone_num">
+        <columns>user_phone_num</columns>
+        <underlying-index>user_phone_num</underlying-index>
+      </key>
+      <column id="58" parent="8" name="fam_id">
         <mandatory>1</mandatory>
         <data-type>bigint(18) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="56" parent="8" name="fam_name">
+      <column id="59" parent="8" name="fam_name">
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
-      <column id="57" parent="8" name="fam_a">
-        <data-type>bigint(18)</data-type>
-      </column>
-      <column id="58" parent="8" name="fam_b">
-        <data-type>bigint(18)</data-type>
-      </column>
-      <column id="59" parent="8" name="fam_c">
-        <data-type>bigint(18)</data-type>
-      </column>
-      <column id="60" parent="8" name="fam_d">
-        <data-type>bigint(18)</data-type>
-      </column>
-      <column id="61" parent="8" name="fam_e">
-        <data-type>bigint(18)</data-type>
-      </column>
-      <column id="62" parent="8" name="fam_f">
-        <data-type>bigint(18)</data-type>
-      </column>
-      <column id="63" parent="8" name="fam_g">
-        <data-type>bigint(18)</data-type>
-      </column>
-      <column id="64" parent="8" name="fam_h">
-        <data-type>bigint(18)</data-type>
-      </column>
-      <column id="65" parent="8" name="fam_i">
-        <data-type>bigint(18)</data-type>
-      </column>
-      <column id="66" parent="8" name="fam_j">
-        <data-type>bigint(18)</data-type>
-      </column>
-      <key id="67" parent="8" name="PRIMARY">
+      <index id="60" parent="8" name="fam_name">
+        <columns>fam_name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="61" parent="8" name="fam_name">
+        <columns>fam_name</columns>
+        <underlying-index>fam_name</underlying-index>
+      </key>
+      <key id="62" parent="8" name="PRIMARY">
         <columns>fam_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="63" parent="9" name="ask_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="64" parent="9" name="ask_user_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18) unsigned</data-type>
+      </column>
+      <column id="65" parent="9" name="ask_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(40)</data-type>
+      </column>
+      <column id="66" parent="9" name="ask_age">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="67" parent="9" name="ask_sex">
+        <mandatory>1</mandatory>
+        <data-type>char(10)</data-type>
+      </column>
+      <column id="68" parent="9" name="ask_desc">
+        <mandatory>1</mandatory>
+        <data-type>varchar(99)</data-type>
+      </column>
+      <column id="69" parent="9" name="ask_time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="70" parent="9" name="ask_title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(40)</data-type>
+      </column>
+      <key id="71" parent="9" name="PRIMARY">
+        <columns>ask_id</columns>
         <primary>1</primary>
       </key>
     </database-model>

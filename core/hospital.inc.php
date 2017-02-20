@@ -103,7 +103,8 @@ function getHosInfo($id)
  *  修改hos密码
  * @param $id
  */
-function changeHosPassword($id){
+function changeHosPassword($id)
+{
     $where = "hos_id={$id}";
     $arr = $_POST;
     $old = md5($arr['old_pass']);
@@ -111,19 +112,19 @@ function changeHosPassword($id){
     $sec = md5($arr['sec_pass']);
     $hosInfo = getHosInfo($id);
     $ok = null;
-    if ($old == $hosInfo['hos_password']){
-        if ($new == $sec){
+    if ($old == $hosInfo['hos_password']) {
+        if ($new == $sec) {
             $ok = ["hos_password" => $new];
-            if (updateData("hospital_info",$ok, $where)){
-                alertMes("密码修改成功！","partInfo.php");
+            if (updateData("hospital_info", $ok, $where)) {
+                alertMes("密码修改成功！", "partInfo.php");
                 hosLogout();
-            }else{
-                alertMes("密码修改失败！","partInfo.php");
+            } else {
+                alertMes("密码修改失败！", "partInfo.php");
             }
-        }else{
-            alertMes("新密码输入不一致！","partInfo.php");
+        } else {
+            alertMes("新密码输入不一致！", "partInfo.php");
         }
-    }else{
-        alertMes("原密码不正确！","partInfo.php");
+    } else {
+        alertMes("原密码不正确！", "partInfo.php");
     }
 }
